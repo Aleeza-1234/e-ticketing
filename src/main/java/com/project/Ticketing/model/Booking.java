@@ -33,7 +33,7 @@ public class Booking {
     @OneToMany(mappedBy="booking")
     private List<BookingSeat> bookingSeats;
 
-    void setBookingTime(LocalDateTime bookingTime){
+    public void setBookingTime(LocalDateTime bookingTime){
         this.bookingTime = bookingTime;
     }
 
