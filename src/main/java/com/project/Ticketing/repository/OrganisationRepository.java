@@ -7,5 +7,5 @@ import com.project.Ticketing.model.Organisation;
 
 @Repository
 public interface OrganisationRepository extends JpaRepository<Organisation, Integer>{
-    
+    Organisation findByEmail(String email);
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.project.Ticketing.dto.CreateEventRequest;
 import com.project.Ticketing.model.Event;
 import com.project.Ticketing.service.EventService;
 
@@ -37,8 +38,8 @@ public class EventController {
     }
 
     @PostMapping("/api/event")
-    public void addEvent(@RequestBody Event event){
-        service.addEvent(event);
+    public void addEvent(@RequestBody CreateEventRequest eventRequest){
+        service.addEvent(eventRequest);
     }
 
     @PutMapping("/api/event")

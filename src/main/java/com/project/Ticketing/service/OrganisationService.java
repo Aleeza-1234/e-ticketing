@@ -39,4 +39,12 @@ public class OrganisationService {
     public void delete(int id){
         repo.deleteById(id);
     }
+
+    public Organisation login(String email, String password){
+        Organisation organisation = repo.findByEmail(email);
+        if(organisation != null && passwordEncoder.matches(password, organisation.getPassword())){
+            return organisation;
+        }
+        return null;
+    }
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.project.Ticketing.dto.BookingRequest;
 import com.project.Ticketing.model.Booking;
 import com.project.Ticketing.service.BookingService;
 
@@ -32,7 +33,7 @@ public class BookingController {
     }
 
     @PostMapping("/api/booking")
-    public void addBooking(@RequestBody Booking booking){
+    public void addBooking(@RequestBody BookingRequest booking){
         service.addBooking(booking);
     }
 

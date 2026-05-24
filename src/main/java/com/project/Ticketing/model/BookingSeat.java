@@ -22,4 +22,24 @@ public class BookingSeat {
     @ManyToOne
     @JoinColumn(name="seat_id")
     private Seat seat;
+
+    public int getId(){
+        return id;
+    }
+
+    public Booking getBooking(){
+        return booking;
+    }
+
+    public void setBooking(Booking booking){
+        this.booking = booking;
+    }
+
+    public Seat getSeat(){
+        return seat;
+    }
+
+    public void setSeat(Seat seat){
+        this.seat = seat;
+    }
 }

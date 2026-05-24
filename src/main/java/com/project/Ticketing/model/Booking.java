@@ -33,4 +33,47 @@ public class Booking {
     @OneToMany(mappedBy="booking")
     private List<BookingSeat> bookingSeats;
 
+    void setBookingTime(LocalDateTime bookingTime){
+        this.bookingTime = bookingTime;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public LocalDateTime getBookingTime(){
+        return bookingTime;
+    }
+
+    public double getTotalAmount(){
+        return totalAmount;
+    }
+
+    public void setTotalAmount(double totalAmount){
+        this.totalAmount = totalAmount;
+    }
+
+    public User getUser(){
+        return user;
+    }
+
+    public void setUser(User user){
+        this.user = user;
+    }
+
+    public Event getEvent(){
+        return event;
+    }
+
+    public void setEvent(Event event){
+        this.event = event;
+    }
+
+    public List<BookingSeat> getBookingSeats(){
+        return bookingSeats;
+    }
+
+    public void setBookingSeats(List<BookingSeat> bookingSeats){
+        this.bookingSeats = bookingSeats;
+    }
 }

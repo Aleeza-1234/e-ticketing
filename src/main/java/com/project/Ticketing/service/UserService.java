@@ -39,4 +39,12 @@ public class UserService {
     public void delete(int id){
         repo.deleteById(id);
     }
+
+    public User login(String email, String password){
+        User user = repo.findByEmail(email);
+        if(user != null && passwordEncoder.matches(password, user.getPassword())){
+            return user;
+        }
+        return null;
+    }
 }

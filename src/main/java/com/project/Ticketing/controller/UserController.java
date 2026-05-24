@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.project.Ticketing.dto.LoginRequest;
 import com.project.Ticketing.model.User;
 import com.project.Ticketing.service.UserService;
 
@@ -44,6 +45,11 @@ public class UserController {
     @DeleteMapping("/api/user/{id}")
     public void deleteUser(@PathVariable int id){
         service.delete(id);
+    }
+
+    @PostMapping("/api/user/login")
+    public User userLogin(@RequestBody LoginRequest request){
+        return service.login(request.getEmail(), request.getPassword());
     }
     
 }
