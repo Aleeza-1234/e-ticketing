@@ -1,5 +1,6 @@
 package com.project.Ticketing.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,6 +18,7 @@ public class BookingSeat {
 
     @ManyToOne
     @JoinColumn(name="booking_id")
+    @JsonIgnore
     private Booking booking;
 
     @ManyToOne

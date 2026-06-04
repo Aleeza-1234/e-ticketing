@@ -3,6 +3,8 @@ package com.project.Ticketing.model;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,6 +33,7 @@ public class Booking {
     private Event event;
 
     @OneToMany(mappedBy="booking")
+    @JsonIgnore
     private List<BookingSeat> bookingSeats;
 
     public void setBookingTime(LocalDateTime bookingTime){

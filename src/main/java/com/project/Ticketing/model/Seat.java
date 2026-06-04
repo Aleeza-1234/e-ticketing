@@ -1,5 +1,6 @@
 package com.project.Ticketing.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,6 +21,7 @@ public class Seat {
 
     @ManyToOne
     @JoinColumn(name="event_id")
+    @JsonIgnore
     private Event event;
 
     public int getId() {
